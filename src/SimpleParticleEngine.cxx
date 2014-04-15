@@ -24,10 +24,10 @@ namespace trillek {
 			part.sy = y;
 			part.z = z;
 			part.sz = z;
-			part.vx = Util::randFloat(sizeXMin, sizeXMax);
-			part.vy = Util::randFloat(sizeYMin, sizeYMax);
-			part.vz = Util::randFloat(sizeZMin, sizeZMax);
-			part.life = Util::randFloat(lifeMin, lifeMax);
+			part.vx = Util::RandFloat(sizeXMin, sizeXMax);
+			part.vy = Util::RandFloat(sizeYMin, sizeYMax);
+			part.vz = Util::RandFloat(sizeZMin, sizeZMax);
+			part.life = Util::RandFloat(lifeMin, lifeMax);
             return part;
         }
         Particle SimpleParticleEngine::Update(Particle p) {
@@ -44,10 +44,10 @@ namespace trillek {
 				part.x = part.sx;
 				part.y = part.sy;
 				part.z = part.sz;
-				part.vx = Util::randFloat(sizeXMin, sizeXMax);
-			    part.vy = Util::randFloat(sizeYMin, sizeYMax);
-			    part.vz = Util::randFloat(sizeZMin, sizeZMax);
-			    part.life = Util::randFloat(lifeMin, lifeMax);
+				part.vx = Util::RandFloat(sizeXMin, sizeXMax);
+			    part.vy = Util::RandFloat(sizeYMin, sizeYMax);
+			    part.vz = Util::RandFloat(sizeZMin, sizeZMax);
+			    part.life = Util::RandFloat(lifeMin, lifeMax);
 			}
             return part;
         }

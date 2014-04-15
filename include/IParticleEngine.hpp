@@ -1,8 +1,8 @@
 #ifndef IPARTICLEENGINE_H
 #define IPARTICLEENGINE_H
 
-#include "particle.hpp"
-#include "util.hpp"
+#include "Particle.hpp"
+#include "Util.hpp"
 
 namespace trillek {
     namespace particle {

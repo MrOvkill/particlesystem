@@ -7,18 +7,12 @@ file(GLOB Source
     "src/*.cxx"
 )
 
-option(MAKE_STATIC "Build Static Libraries" off)
+option(MAKE_SHARED "Build Shared Libraries" off)
 
-if(MAKE_STATIC)
-add_library(ParticleSystem STATIC ${Source})
-else()
+if(MAKE_SHARED)
 add_library(ParticleSystem SHARED ${Source})
+else()
+add_library(ParticleSystem STATIC ${Source})
 endif()
 
 target_link_libraries(ParticleSystem)
-
-#if(EXISTS "lib")
-#if(EXISTS "lib/glfw3")
-#
-#endif()
-#endif()
