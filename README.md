@@ -17,7 +17,7 @@ Example usage:<br />
 #include "SimpleParticleEngine.hpp"
 #include "Util.hpp"
 
-#define PARTICLES_SIZE 500
+#define PARTICLES_SIZE 2500
 
 using namespace trillek;
 
