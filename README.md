@@ -13,6 +13,9 @@ make
 <br />
 Example usage:<br />
 ```CXX
+/*
+    Warning: PSEUDO-CODE.  Only what's directly related to my API works here.
+*/
 #include "Particle.hpp"
 #include "SimpleParticleEngine.hpp"
 #include "Util.hpp"
