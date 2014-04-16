@@ -21,21 +21,16 @@ Example usage:<br />
 
 using namespace trillek;
 
+map<int, particle::Particle> particles;
+
 int main(void) {
     // Seed our random generator
     util::Util::Seed();
     
-    // Create an array of 500 particles
-    particle::Particle particles[PARTICLES_SIZE];
-    
     // Create our particle engine
     particle::SimpleParticleEngine engine;
     
-    // Initialize particles
-    for(int i = 0; i < PARTICLES_SIZE; i++) {
-        // Let's Set it's initial position up where the sky should be
-        particles[i] = engine.Init(particles[i], 0, 100, 0);
-    }
+    engine.Init(PARTICLE_SIZE, 0, 100, 0);
     
     // All of these are relative to where you placed it.
     /*
@@ -52,17 +47,16 @@ int main(void) {
     engine.sizeZMax = 100f;
     
     // Update the particles to work with our new rules
-    for(int i = 0; i < PARTICLES_SIZE; i++) {
-        // Let's give the impression of rain
-        particles[i] = engine.Update(particles[i]);
-    }
+    engine.Update();
     
     while(/* Conditions for rendering */) {
         /* Do other rendering stuff */
+        engine.Update();
+        particles = engine.getParticles();
         for(int i = 0; i < PARTICLES_SIZE; i++) {
-            particles[i] = engine.Update(particles[i]);
             /* Draw each particle */
         }
+        particles = NULL;
         /* Do yet more rendering stuff and key detection, etc... */
     }
 }

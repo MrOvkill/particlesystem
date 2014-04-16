@@ -3,13 +3,16 @@
 
 #include "Particle.hpp"
 #include "Util.hpp"
+#include <map>
 
 namespace trillek {
     namespace particle {
         class IParticleEngine {
             public:
-                Particle Init(Particle p, float x, float y, float z);
-                Particle Update(Particle p);
+                int size;
+                std::map<int, Particle> particles;
+                void Init(int ns, float x, float y, float z);
+                void Update();
         };
     }
 }

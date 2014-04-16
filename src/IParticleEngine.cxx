@@ -2,11 +2,11 @@
 
 namespace trillek {
     namespace particle {
-        Particle IParticleEngine::Init(Particle p, float x, float y, float z) {
-            return p;
+        void IParticleEngine::Init(int ns, float x, float y, float z) {
+            size = ns;
         }
-        Particle IParticleEngine::Update(Particle p) {
-            return p;
+        void IParticleEngine::Update() {
+            
         }
     }
 }
