@@ -1,7 +1,8 @@
-Trillek Particle System Module
+Particle System
 =============================
 Version 0.0.1<br />
 This is a particle physics system.<br />
+It handles the math for the particles.<br />
 Ir provides all the basics for particles, as well as a "SimpleParticleEngine" class for basic effects.<br />
 Instructions:<br />
 clone the repository, then do this:<br />
@@ -22,8 +23,6 @@ Example usage:<br />
 #include "Util.hpp"
 
 #define PARTICLES_SIZE 1500
-
-using namespace trillek;
 
 int main(void) {
     // Seed our random generator
