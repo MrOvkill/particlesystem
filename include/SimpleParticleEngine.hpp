@@ -14,6 +14,7 @@ namespace particle
             float startXMin, startXMax, startYMin, startYMax, startZMin, startZMax;
             void Init(int ns, float x, float y, float z);
             void Update();
+            void Refresh();
     };
 }
 

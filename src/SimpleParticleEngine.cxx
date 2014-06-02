@@ -68,4 +68,20 @@ namespace particle
             particles[i] = part;
         }
     }
+    void SimpleParticleEngine::Refresh()
+    {
+        Particle part;
+        for(int i = 0; i < size; i++)
+        {
+            part = particles[i];
+            part.x = Util::RandFloat(part.sx+startXMin, part.sx+startXMax);
+            part.y = Util::RandFloat(part.sy+startYMin, part.sy+startYMax);
+            part.z = Util::RandFloat(part.sz+startZMin, part.sz+startZMax);
+            part.vx = Util::RandFloat(sizeXMin, sizeXMax);
+            part.vy = Util::RandFloat(sizeYMin, sizeYMax);
+            part.vz = Util::RandFloat(sizeZMin, sizeZMax);
+            part.life = Util::RandFloat(lifeMin, lifeMax);
+            particles[i] = part;
+        }
+    }
 }

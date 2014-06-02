@@ -1,6 +1,6 @@
 Particle System
 =============================
-Version 0.0.1<br />
+Version 0.0.2<br />
 This is a particle physics system.<br />
 It handles the math for the particles.<br />
 Ir provides all the basics for particles, as well as a "SimpleParticleEngine" class for basic effects.<br />
