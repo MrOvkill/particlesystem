@@ -20,11 +20,9 @@ Example usage:<br />
 #include "SimpleParticleEngine.hpp"
 #include "Util.hpp"
 
-#define PARTICLES_SIZE 2500
+#define PARTICLES_SIZE 1500
 
 using namespace trillek;
-
-map<int, particle::Particle> particles;
 
 int main(void) {
     // Seed our random generator
@@ -33,15 +31,14 @@ int main(void) {
     // Create our particle engine
     particle::SimpleParticleEngine engine;
     
-    engine.Init(PARTICLE_SIZE, 0, 100, 0);
+    engine.Init(PARTICLE_SIZE, 0, 0, -500);
     
     // All of these are relative to where you placed it.
     /*
-        This configuration makes an engine that drops particles from it's Y position
-        within 200 of it's X and Z position
-        And with a gravity factor of 0.1 ( about what you'd expect from rain )
+        This configuration will make a circular spawning radius of 25
     */
-    engine.gravY = -0.1f;
+    engine.gravY = 0.0f;
+    
     engine.sizeXMin = -100f;
     engine.sizeXMax = 100f;
     engine.sizeYMin = 0f;
@@ -49,17 +46,22 @@ int main(void) {
     engine.sizeZMin = -100f;
     engine.sizeZMax = 100f;
     
+    engine.startXMin = -25f;
+    engine.startXMax = 25f;
+    engine.startYMin = -25f;
+    engine.startYMax = 25f;
+    engine.startZMin = -25f;
+    engine.startZMax = 25f;
+    
     // Update the particles to work with our new rules
     engine.Update();
     
-    while(/* Conditions for rendering */) {
+    while(1) {
         /* Do other rendering stuff */
         engine.Update();
-        particles = engine.getParticles();
         for(int i = 0; i < PARTICLES_SIZE; i++) {
-            /* Draw each particle */
+            /* draw(engine.particles[i]); */
         }
-        particles = NULL;
         /* Do yet more rendering stuff and key detection, etc... */
     }
 }

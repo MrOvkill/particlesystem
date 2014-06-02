@@ -5,14 +5,14 @@
 
 namespace trillek {
     namespace particle {
-        class SimpleParticleEngine : IParticleEngine {
+        class SimpleParticleEngine : public IParticleEngine {
             public:
                 float lifeMin, lifeMax, lifeLength;
                 float sizeXMin, sizeXMax, sizeYMin, sizeYMax, sizeZMin, sizeZMax;
                 float gravX, gravY, gravZ;
+                float startXMin, startXMax, startYMin, startYMax, startZMin, startZMax;
                 void Init(int ns, float x, float y, float z);
                 void Update();
-                std::map<int, Particle> getParticles();
         };
     }
 }

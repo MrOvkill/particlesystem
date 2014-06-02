@@ -14,6 +14,12 @@ namespace trillek {
             sizeXMax = 10.f;
             sizeYMax = 10.f;
             sizeZMax = 10.f;
+            startXMin = -10.f;
+            startYMin = -10.f;
+            startZMin = -10.f;
+            startXMax = 10.f;
+            startYMax = 10.f;
+            startZMax = 10.f;
             lifeMin = 5.f;
             lifeMax = 10.f;
             lifeLength = 0.1f;
@@ -49,9 +55,9 @@ namespace trillek {
                 part.life -= lifeLength;
                 if(part.life <= 0)
                 {
-                    part.x = part.sx;
-                    part.y = part.sy;
-                    part.z = part.sz;
+                    part.x = Util::RandFloat(part.sx+startXMin, part.sx+startXMax);
+                    part.y = Util::RandFloat(part.sy+startYMin, part.sy+startYMax);
+                    part.z = Util::RandFloat(part.sz+startZMin, part.sz+startZMax);
                     part.vx = Util::RandFloat(sizeXMin, sizeXMax);
                     part.vy = Util::RandFloat(sizeYMin, sizeYMax);
                     part.vz = Util::RandFloat(sizeZMin, sizeZMax);
@@ -59,9 +65,6 @@ namespace trillek {
                 }
                 particles[i] = part;
             }
-        }
-        std::map<int, Particle> SimpleParticleEngine::getParticles() {
-            return particles;
         }
     }
 }

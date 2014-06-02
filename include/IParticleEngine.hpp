@@ -13,6 +13,7 @@ namespace trillek {
                 std::map<int, Particle> particles;
                 void Init(int ns, float x, float y, float z);
                 void Update();
+                std::map<int, Particle> getParticles();
         };
     }
 }

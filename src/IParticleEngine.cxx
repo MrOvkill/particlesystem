@@ -8,5 +8,8 @@ namespace trillek {
         void IParticleEngine::Update() {
             
         }
+        std::map<int, Particle> IParticleEngine::getParticles() {
+            return particles;
+        }
     }
 }
